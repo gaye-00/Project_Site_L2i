@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Ingenieurie&mdash;Informatique {% endblock %}
+
+{% block content %}
+
+    <div class="custom-breadcrumns border-bottom">
+      <div class="container">
+        <a href="{% url 'index' %}">Acceuil</a>
+        <span class="mx-3 icon-keyboard_arrow_right"></span>
+        <span class="current">Connexion</span>
+      </div>
+    </div>
+
+    <div class="site-section">
+        <div class="container">
+
+
+            <div class="row justify-content-center">
+                <div class="col-md-5">
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" class="form-control form-control-lg">
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <label for="pword">Password</label>
+                            <input type="text" id="pword" class="form-control form-control-lg">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <input type="submit" value="Log In" class="btn btn-primary btn-lg px-5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+          
+        </div>
+    </div>
+
+    
+
+{% endblock %}
