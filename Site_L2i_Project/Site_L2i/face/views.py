@@ -20,11 +20,11 @@ def course_single(request):
 def courses(request):
     return render(request, 'face/courses.html')
 
-#def login(request):
-    #return render(request, 'face/login.html')
+def login(request):
+    return render(request, 'face/login.html')
 
 def news_single(request):
     return render(request, 'face/news-single.html')
 
-#def register(request):
-   #return render(request, 'face/register.html')
+def register(request):
+    return render(request, 'face/register.html')
