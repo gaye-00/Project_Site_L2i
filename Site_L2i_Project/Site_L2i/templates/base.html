@@ -54,10 +54,18 @@
             <a href="#" class="small mr-3"><span class="icon-phone2 mr-2"></span> 77 102 61 70</a> 
             <a href="#" class="small mr-3"><span class="icon-envelope-o mr-2"></span> oriontheroot@gmail.com</a> 
           </div>
+          {% if user.is_authenticated %}
+          <div class="col-lg-3 text-right">
+            <a href="{% url 'logout' %}" class="small mr-3"><span class="icon-unlock-alt"></span> Se deconnecter</a>
+          </div>
+          {% else %}
           <div class="col-lg-3 text-right">
             <a href="{% url 'login' %}" class="small mr-3"><span class="icon-unlock-alt"></span> Se connecter</a>
             <a href="{% url 'register' %}" class="small btn btn-primary px-4 py-2 rounded-0"><span class="icon-users"></span> S'inscrire</a>
           </div>
+
+          {% endif %}
+
         </div>
       </div>
     </div>
