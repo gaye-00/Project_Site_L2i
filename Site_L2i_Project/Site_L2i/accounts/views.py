@@ -59,5 +59,5 @@ def logIn(request):
 
 def logOut(request):
     logout(request)
-    messages.success(request, 'Vous éte déconnecter')
+    messages.success(request, 'Vous étes déconnecté')
     return redirect('index')

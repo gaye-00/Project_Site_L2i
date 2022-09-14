@@ -8,9 +8,9 @@
       <div class="container">
         <a href="index.html">Acceuil</a>
         <span class="mx-3 icon-keyboard_arrow_right"></span>
-        <a href="courses.html">Courses</a>
+        <a href="courses.html">Cours</a>
         <span class="mx-3 icon-keyboard_arrow_right"></span>
-        <span class="current">Courses</span>
+        <span class="current">{{cours.matiere}}</span>
       </div>
     </div>
 
@@ -19,29 +19,35 @@
             <div class="row">
                 <div class="col-md-6 mb-4">
                     <p>
-                        <img src="images/course_5.jpg" alt="Image" class="img-fluid">
+                    {%if cours %}
+                     
+                        <iframe src=" {{cours.doc.url }}" download="{{cours.doc.url }}" height="900px" width="600px"></iframe>
+                        {% comment %} <img src="/static/face/images/course_5.jpg" alt="Image" class="img-fluid"> {% endcomment %}
                     </p>
                 </div>
                 <div class="col-lg-5 ml-auto align-self-center">
                         <h2 class="section-title-underline mb-5">
-                            <span>Course Details</span>
+                            <span>Details du Cours</span>
+                        </h2>
+                        <h2 class="section-title-underline mb-5">
+                            <span>{{cours.titre}}</span>
                         </h2>
                         
-                        <p><strong class="text-black d-block">Teacher:</strong> Craig Daniel</p>
-                        <p class="mb-5"><strong class="text-black d-block">Hours:</strong> 8:00 am &mdash; 9:30am</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At itaque dolore libero corrupti! Itaque, delectus?</p>
-                        <p>Modi sit dolor repellat esse! Sed necessitatibus itaque libero odit placeat nesciunt, voluptatum totam facere.</p>
-    
+                        <p><strong class="text-black d-block">Professeur:</strong> {{cours.auteur}}</p>
+                        <p class="mb-5"><strong class="text-black d-block">Duree:</strong> 2h:00  &mdash; de temps</p>
+                        <p>{{cours.desc}}</p>
+                        <h3>A ne pas oublier</h3>
                         <ul class="ul-check primary list-unstyled mb-5">
-                            <li>Lorem ipsum dolor sit amet consectetur</li>
-                            <li>consectetur adipisicing  </li>
-                            <li>Sit dolor repellat esse</li>
-                            <li>Necessitatibus</li>
-                            <li>Sed necessitatibus itaque </li>
+                      
+                            <li>Niveau: {{cours.niveau}} </li>
+                            <li>Matiere: {{cours.matiere}}</li>
+                            <li>Coefficent de la matiere :{{cours.coef}} </li>
+                            <li>Tres important pour l'informatique</li>
+                           {%endif%} 
                         </ul>
 
                         <p>
-                            <a href="#" class="btn btn-primary rounded-0 btn-lg px-5">Enroll</a>
+                            <a href=" {{cours.doc.url }}" download="{{cours.doc.url }}" class="btn btn-primary rounded-0 btn-lg px-5">Telecharger</a>
                         </p>
     
                     </div>

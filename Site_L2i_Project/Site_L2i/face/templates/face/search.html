@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+{% block title %} Sen Immobilier {% endblock %}
+{% block content %} 
+<div class="container" > 
+<h2>Resultat de la recherche pour <strong>{{query}}</strong> </h2>
+{% for cours in listCours %}
+<div class="col-md-6 wow-outer">
+  <!-- Post Modern-->
+  <cours class="post-modern wow slideInLeft"><a class="post-modern-media" href="{% url 'detail' cours.id %}"><img class="card-img-top" src=" {{ cours.img1.url }} " alt="Bien immobilier" style="height: 300px;" /></a>
+    <h4 class="post-modern-title"><a class="post-modern-title" href="/static/#"><img src="/static/images/localsation.png" alt=""> {{ cours.adresse_bien }}</a></h4>
+    <ul class="post-modern-meta">
+      <li><a class="button-winona" href="/static/#">{{ cours.prix_bien }} francs/mois</a></li>
+      <li>30 Sq. Ft.</li>
+      <li>{{ cours.nb_chambre }} Chambres</li>
+
+    </ul>
+    <p>{{ cours.desc|truncatewords:20 }}</p>
+  </cours>
+</div>
+
+{% endfor %}
+
+</div>
+
+
+{% endblock %}
