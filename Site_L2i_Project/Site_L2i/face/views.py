@@ -28,7 +28,7 @@ def courses(request):
     return render(request, 'face/courses.html',{"listCours":listCours})
 
 def universite(request):
-    return render(request, 'face/universite.html',{"listCours":listCours})
+    return render(request, 'face/universite.html')
 
 def news_single(request):
     return render(request, 'face/news-single.html')
