@@ -7,7 +7,7 @@
 
     <div class="custom-breadcrumns border-bottom">
       <div class="container">
-        <a href="#">Acceuil</a>
+        <a href="{% url 'index' %}">Acceuil</a>
         <span class="mx-3 icon-keyboard_arrow_right"></span>
         <span class="current">A propos de nous</span>
       </div>
@@ -60,7 +60,7 @@
         </div>
     </div>
 
-    <div class="section-bg style-1" style="background-image: url('images/hero_1.jpg');">
+    <div class="section-bg style-1" style="background-image: url('{% static 'face/images/hero_1.jpg' %}') ;">
         <div class="container">
           <div class="row">
             <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
