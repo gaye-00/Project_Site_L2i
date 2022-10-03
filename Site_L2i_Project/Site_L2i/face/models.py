@@ -3,9 +3,9 @@ import os
 from django.core.exceptions import ValidationError
 def est_une_extension_autorise(value):
     ext=os.path.splitext(value.name)[1]
-    valid_extensions=['.pdf','.doc','.docx']
+    valid_extensions=['.pdf',]
     if not ext in valid_extensions:
-        raise ValidationError(u'Je ne veux pas de ce genre de fichier alors svp respecter les types(pdf,doc,docx)')
+        raise ValidationError(u'Je ne veux pas de ce genre de fichier alors svp respecter les types(pdf)')
 
 
 class cours(models.Model):

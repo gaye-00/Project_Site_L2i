@@ -7,7 +7,7 @@
 
     <div class="custom-breadcrumns border-bottom">
       <div class="container">
-        <a href="#">Acceuil</a>
+        <a href="{% url 'index' %}">Acceuil</a>
         <span class="mx-3 icon-keyboard_arrow_right"></span>
         <span class="current">A propos de nous</span>
       </div>
@@ -17,15 +17,17 @@
             <div class="row">
               <div class="col-lg-4">
                 <h2 class="section-title-underline">
-                  <span>Academics History</span>
+                  <span>Historique</span>
                 </h2>
               </div>
               <div class="col-lg-4">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, iure dolorum! Nam veniam tempore tenetur aliquam architecto, hic alias quia quisquam, obcaecati laborum dolores. Ex libero cumque veritatis numquam placeat?</p>
+                <p>Apres l'échec des étudiants de Masters en informatique et de la PMI(Physique Maths Informatique)
+                   les professeurs on pris la decision de former une nouvelle génération d'informaticiens.
+                </p>
               </div>
               <div class="col-lg-4">
-                <p>Nam veniam tempore tenetur aliquam
-                architecto, hic alias quia quisquam, obcaecati laborum dolores. Ex libero cumque veritatis numquam placeat?</p>
+                <p>Capable de relever les defies les plus dures que le monde donne aux informaticiens. De ce fait
+                la L2I(Licence en Ingenierie Informatique) a vue le jour au sien de l'université Assane SECK de Ziguinchor.</p>
               </div>
             </div>
           </div> -->
@@ -40,8 +42,7 @@
                     <h2 class="section-title-underline mb-5">
                         <span>Pourquoi Ingenierie Informatique</span>
                     </h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At itaque dolore libero corrupti! Itaque, delectus?</p>
-                    <p>Modi sit dolor repellat esse! Sed necessitatibus itaque libero odit placeat nesciunt, voluptatum totam facere.</p>
+                    <p>L'informatique est indispensable pour trouver du travail et évoluer professionnellement. Presque toutes les entreprises exigent que leurs employés puissent utiliser des ordinateurs. De plus en plus de postes nécessitent l'utilisation de l'outil informatique.</p>
                 </div>
             </div>
 
@@ -51,34 +52,44 @@
                     </div>
                     <div class="col-lg-5 mr-auto align-self-center order-2 order-lg-1">
                         <h2 class="section-title-underline mb-5">
-                            <span>Personalized Learning</span>
+                            <span>Apprentissage personnalisé</span>
                         </h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At itaque dolore libero corrupti! Itaque, delectus?</p>
-                        <p>Modi sit dolor repellat esse! Sed necessitatibus itaque libero odit placeat nesciunt, voluptatum totam facere.</p>
+                        <p>Il existe plusieurs façons d’apprendre l’informatique afin de combler des lacunes ou de vous familiariser avec cet univers en partant de zéro. Cela peut par exemple passer par la lecture de livres sur l’informatique à destination des débutants, mais bien souvent cette méthode montre ses limites. En effet, l’apprentissage de l’informatique passe en grande partie par la pratique. 
+                          <p>C’est la meilleure façon qui soit de progresser dans ce vaste domaine qui a tendance à effrayer les néophytes et les personnes peu familières aux nouvelles technologies.</p>
+
+                          <p> 
+                         De même, un grand nombre de jeunes ayant pourtant grandi avec Internet ne disposent pas toujours des compétences informatiques attendues des recruteurs.</p>
+
+                        <p>Une formation en informatique sera l'occasion pour certains de dissiper cette peur de la machine et à d'autres de remettre en question leurs acquis dans ce domaine.</p>
                     </div>
                 </div>
         </div>
     </div>
 
-    <div class="section-bg style-1" style="background-image: url('images/hero_1.jpg');">
+    <div class="section-bg style-1" style="background-image: url('{% static 'face/images/hero_1.jpg' %}') ;">
         <div class="container">
           <div class="row">
             <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
               <span class="icon flaticon-mortarboard"></span>
-              <h3>Our Philosphy</h3>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis recusandae, iure repellat quis delectus ea? Dolore, amet reprehenderit.</p>
+              <h3>Notre Philosophie</h3>
+              <p>Transmettre et faire acquérir des connaissances, préparer à la vie professionnelle, 
+                éduquer les futurs adultes à être citoyens et à vivre ensemble, viser l'égalité entre 
+                élèves dans la réussite éducative est la philosophie de la L2I.</p>
             </div>
             <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
               <span class="icon flaticon-school-material"></span>
-              <h3>Academics Principle</h3>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis recusandae, iure repellat quis delectus ea?
-                Dolore, amet reprehenderit.</p>
+              <h3>Principe académique</h3>
+              <p>« l'homme est présenté d'emblée comme un certain être qui, 
+                à la différence des autres animaux, serait doué d'une faculté 
+                qui lui assure un certain rayonnement, la faculté de raisonner ».
+                Nous allons booster le raisonnement dans la L2I.</p>
             </div>
             <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
               <span class="icon flaticon-library"></span>
-              <h3>Key of Success</h3>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis recusandae, iure repellat quis delectus ea?
-                Dolore, amet reprehenderit.</p>
+              <h3>Clé du succès</h3>
+              <p>L'éducation est la clé du succès car elle ouvre des portes 
+                aux personnes de tous les horizons et élargit l'esprit humain
+                avec la connaissance.</p>
             </div>
           </div>
         </div>
@@ -90,7 +101,7 @@
         <div class="row mb-5 justify-content-center text-center">
           <div class="col-lg-4 mb-5">
             <h2 class="section-title-underline mb-5">
-              <span>Our Teachers</span>
+              <span>Nos enseignants</span>
             </h2>
           </div>
         </div>
@@ -98,61 +109,64 @@
           <div class="col-lg-4 col-md-6 mb-5 mb-lg-5">
 
             <div class="feature-1 border person text-center">
-                <img src="{% static 'face/images/person_1.jpg'%}" alt="Image" class="img-fluid">
+                <img src="{% static 'face/images/download.png'%}" alt="Image" class="img-fluid">
               <div class="feature-1-content">
-                <h2>Craig Daniel</h2>
-                <span class="position mb-3 d-block">Math Teacher</span>    
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi hendrerit elit</p>
+                <h2>Pape Aliou CISSE</h2>
+                <span class="position mb-3 d-block">Prof en Programmation</span>    
+                <p>Il dispense des cours d'algo,de backend OU des simulations de donnée......</p>
               </div>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 mb-5 mb-lg-5">
             <div class="feature-1 border person text-center">
-                <img src="{% static 'face/images/person_2.jpg'%}" alt="Image" class="img-fluid">
+                <img src="{% static 'face/images/download.png'%}" alt="Image" class="img-fluid">
               <div class="feature-1-content">
-                <h2>Taylor Simpson</h2>
-                <span class="position mb-3 d-block">Math Teacher</span>    
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi hendrerit elit</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-5 mb-lg-5">
-            <div class="feature-1 border person text-center">
-                <img src="{% static 'face/images/person_3.jpg'%}" alt="Image" class="img-fluid">
-              <div class="feature-1-content">
-                <h2>Jonas Tabble</h2>
-                <span class="position mb-3 d-block">Math Teacher</span>    
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi hendrerit elit</p>
+                <h2>Youssou FAYE</h2>
+                <span class="position mb-3 d-block">Prof Securite </span>    
+                <p>Il dispense des cours de securite,reseau, SE ......</p>
               </div>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 mb-5 mb-lg-5">
+            <div class="feature-1 border person text-center">
+                <img src="{% static 'face/images/download.png'%}" alt="Image" class="img-fluid">
+              <div class="feature-1-content">
+                <h2>Ousmane DIALLO</h2>
+                <span class="position mb-3 d-block">Chef du departement informatique</span>    
+                <p>Il dispense des cours d'algo,de backend, technologie embarquée ......</p>
+              </div>
+            </div>
+          </div>
 
+          <div class="col-lg-4 col-md-6 mb-5 mb-lg-5">
             <div class="feature-1 border person text-center">
-                <img src="{% static 'face/images/person_4.jpg'%}" alt="Image" class="img-fluid">
+                <img src="{% static 'face/images/download.png'%}" alt="Image" class="img-fluid">
               <div class="feature-1-content">
-                <h2>Craig Daniel</h2>
-                <span class="position mb-3 d-block">Math Teacher</span>    
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi hendrerit elit</p>
+                <h2>Daouda Niang DIATTA</h2>
+                <span class="position mb-3 d-block">Prof de Math </span>    
+                <p>Il enseigne toutes les branches des mathematiques</p>
               </div>
             </div>
           </div>
+
           <div class="col-lg-4 col-md-6 mb-5 mb-lg-5">
             <div class="feature-1 border person text-center">
-                <img src="{% static 'face/images/person_2.jpg'%}" alt="Image" class="img-fluid">
+                <img src="{% static 'face/images/download.png'%}" alt="Image" class="img-fluid">
               <div class="feature-1-content">
-                <h2>Taylor Simpson</h2>
-                <span class="position mb-3 d-block">Math Teacher</span>    
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi hendrerit elit</p>
-              </div>
+                <h2>Khadim DRAME</h2>
+                <span class="position mb-3 d-block">Prof en Programmation</span>    
+                <p>Il dispense des cours d'algo,de backend, IA ......</p>
+              
+                </div>
             </div>
           </div>
+          
           <div class="col-lg-4 col-md-6 mb-5 mb-lg-5">
             <div class="feature-1 border person text-center">
-                <img src="{% static 'face/images/person_3.jpg'%}" alt="Image" class="img-fluid">
+                <img src="{% static 'face/images/download.png'%}" alt="Image" class="img-fluid">
               <div class="feature-1-content">
-                <h2>Jonas Tabble</h2>
+                <h2>Serigne DIAGNE</h2>
                 <span class="position mb-3 d-block">Math Teacher</span>    
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi hendrerit elit</p>
               </div>
@@ -174,7 +188,7 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-7">
-            <h2>Subscribe to us!</h2>
+            <h2>Abonnez-vous à nous!</h2>
             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,</p>
           </div>
           <div class="col-lg-5">

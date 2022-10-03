@@ -3,29 +3,30 @@
 {% block title %} Ingenieurie&mdash;Informatique {% endblock %}
 
 {% block content %}
-
     <div class="custom-breadcrumns border-bottom">
       <div class="container">
-        <a href="index.html">Acceuil</a>
+        <a href="{% url 'index' %}">Acceuil</a>
         <span class="mx-3 icon-keyboard_arrow_right"></span>
         <span class="current">Les cours</span>
       </div>
     </div>
-
+    <div class="container">
+            <h3> Parcourez une matiere afin de faire defiler les cours</h3>
+      </div>
     <div class="site-section">
+
         <div class="container">
             <div class="row">
-                {% for cours in listCours %}
-                <div class="col-lg-4 col-md-6 mb-4">
+            
+             <div class="col-lg-4 col-md-6 mb-4">
                     <div class="course-1-item">
                         <figure class="thumnail">
-                        <a href="{%url 'course_single' cours.id %}"><img src="{{cours.cover.url}}" alt="Image" class="img-fluid"></a>
-                        <div class="price">$00</div>
-                        <div class="category"><h3>{{cours.matiere}} <br>
-                        Pr {{cours.auteur}}</h3></div>  
+                        <a href="{% url 'course_selon_matiere' "Back-End" %}"><img src="{% static 'face/images/backend-is.png' %}" alt="Image" class="img-fluid" height='700px' ></a>
+                       
+                        <div class="category"><h3>Back-End <br>
+                         Dr P.A Cisse</h3></div>  
                         </figure>
                         <div class="course-1-content pb-4">
-                        <h2>{{cours.titre}}</h2>
                         <div class="rating text-center mb-3">
                             <span class="icon-star2 text-warning"></span>
                             <span class="icon-star2 text-warning"></span>
@@ -33,35 +34,182 @@
                             <span class="icon-star2 text-warning"></span>
                             <span class="icon-star2 text-warning"></span>
                         </div>
-                        <p class="desc mb-4">{{cours.desc|truncatewords:8}}.</p>
-                        <p><a href="course-single.html" class="btn btn-primary rounded-0 px-4">Commencer tout de suite</a></p>
+                        <p class="desc mb-4">Nombre de cours : {{be}}</p>
+                        <p><a href="{% url 'course_selon_matiere' "Back-End" %}" class="btn btn-primary rounded-0 px-4">Parcourir</a></p>
                         </div>
                     </div>
                 </div>
-                {% endfor %}
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="course-1-item">
+                        <figure class="thumnail">
+                        <a href="{% url 'course_selon_matiere' "math" %}"><img src="{% static 'face/images/course_10.jpg' %}" alt="Image" class="img-fluid" height='300px'></a>
+                       
+                        <div class="category"><h3>Math <br>
+                         Dr D.N.Diatta</h3></div>  
+                        </figure>
+                        <div class="course-1-content pb-4">
+                        <div class="rating text-center mb-3">
+                            <span class="icon-star2 text-warning"></span>
+                            <span class="icon-star2 text-warning"></span>
+                            <span class="icon-star2 text-warning"></span>
+                            <span class="icon-star2 text-warning"></span>
+                            <span class="icon-star2 text-warning"></span>
+                        </div>
+                        <p class="desc mb-4">Nombre de cours : {{math}}</p>
+                        <p><a href="{% url 'course_selon_matiere' "math" %}" class="btn btn-primary rounded-0 px-4">Parcourir</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+
+            
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="course-1-item">
+                        <figure class="thumnail">
+                        <a href="{% url 'course_selon_matiere' "Analyse de Données" %}"><img src="{% static 'face/images/course_11.jpg' %}" alt="Image" class="img-fluid" height='300px'></a>
+                       
+                        <div class="category"><h3>Analyse de Données <br>
+                         Dr Nongo</h3></div>  
+                        </figure>
+                        <div class="course-1-content pb-4">
+                        <div class="rating text-center mb-3">
+                            <span class="icon-star2 text-warning"></span>
+                            <span class="icon-star2 text-warning"></span>
+                            <span class="icon-star2 text-warning"></span>
+                            <span class="icon-star2 text-warning"></span>
+                            <span class="icon-star2 text-warning"></span>
+                        </div>
+                        <p class="desc mb-4">Nombre de cours : {{ad}}</p>
+                        <p><a href="{% url 'course_selon_matiere' "Analyse de Données" %}" class="btn btn-primary rounded-0 px-4">Parcourir</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+            
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="course-1-item">
+                        <figure class="thumnail">
+                        <a href="{% url 'course_selon_matiere' "Algorithme" %}"><img src="{% static 'face/images/course_14.jpg' %}" alt="Image" class="img-fluid" height='300px'></a>
+                       
+                        <div class="category"><h3>Algorithme <br>
+                         Dr Gaye</h3></div>  
+                        </figure>
+                        <div class="course-1-content pb-4">
+                        <div class="rating text-center mb-3">
+                            <span class="icon-star2 text-warning"></span>
+                            <span class="icon-star2 text-warning"></span>
+                            <span class="icon-star2 text-warning"></span>
+                            <span class="icon-star2 text-warning"></span>
+                            <span class="icon-star2 text-warning"></span>
+                        </div>
+                        <p class="desc mb-4">Nombre de cours : {{algo}}</p>
+                        <p><a href="{% url 'course_selon_matiere' "Algorithme" %}" class="btn btn-primary rounded-0 px-4">Parcourir</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="course-1-item">
+                        <figure class="thumnail">
+                        <a href="{% url 'course_selon_matiere' "Base de Données" %}"><img src="{% static 'face/images/course_0.jpg' %}" alt="Image" class="img-fluid" height='300px'></a>
+                       
+                        <div class="category"><h3>Base de Données <br>
+                         Dr S.Diagne</h3></div>  
+                        </figure>
+                        <div class="course-1-content pb-4">
+                        <div class="rating text-center mb-3">
+                            <span class="icon-star2 text-warning"></span>
+                            <span class="icon-star2 text-warning"></span>
+                            <span class="icon-star2 text-warning"></span>
+                            <span class="icon-star2 text-warning"></span>
+                            <span class="icon-star2 text-warning"></span>
+                        </div>
+                        <p class="desc mb-4">Nombre de cours : {{bd}}</p>
+                        <p><a href="{% url 'course_selon_matiere' "Base de Données" %}" class="btn btn-primary rounded-0 px-4">Parcourir</a></p>
+                        </div>
+                    </div>
+                </div>
+
+
+            
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="course-1-item">
+                        <figure class="thumnail">
+                        <a href="{% url 'course_selon_matiere' "Principes des Systèmes d’Exploitation" %}"><img src="{% static 'face/images/course_12.jpg' %}" alt="Image" class="img-fluid" height='300px'></a>
+                       
+                        <div class="category"><h3>Principes des Systèmes d’Exploitation <br>
+                         Pr Y.Faye</h3></div>  
+                        </figure>
+                        <div class="course-1-content pb-4">
+                        <div class="rating text-center mb-3">
+                            <span class="icon-star2 text-warning"></span>
+                            <span class="icon-star2 text-warning"></span>
+                            <span class="icon-star2 text-warning"></span>
+                            <span class="icon-star2 text-warning"></span>
+                            <span class="icon-star2 text-warning"></span>
+                        </div>
+                        <p class="desc mb-4">Nombre de cours : {{se}}</p>
+                        <p><a href="{% url 'course_selon_matiere' "Principes des Systèmes d’Exploitation" %}" class="btn btn-primary rounded-0 px-4">Parcourir</a></p>
+                        </div>
+                    </div>
+                </div>
+
+
+            
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="course-1-item">
+                        <figure class="thumnail">
+                        <a href="{% url 'course_selon_matiere' "Introduction aux Réseaux" %}"><img src="{% static 'face/images/course_13.jpg' %}" alt="Image" class="img-fluid" height='300px'></a>
+                       
+                        <div class="category"><h3>Introduction aux Réseaux <br>
+                         Dr Mendy</h3></div>  
+                        </figure>
+                        <div class="course-1-content pb-4">
+                        <div class="rating text-center mb-3">
+                            <span class="icon-star2 text-warning"></span>
+                            <span class="icon-star2 text-warning"></span>
+                            <span class="icon-star2 text-warning"></span>
+                            <span class="icon-star2 text-warning"></span>
+                            <span class="icon-star2 text-warning"></span>
+                        </div>
+                        <p class="desc mb-4">Nombre de cours : {{ir}}</p>
+                        <p><a href="{% url 'course_selon_matiere' "Introduction aux Réseaux" %}" class="btn btn-primary rounded-0 px-4">Parcourir</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
             </div>
         </div>
     </div>
 
-    <div class="section-bg style-1" style="background-image: url('images/hero_1.jpg');">
+    <div class="section-bg style-1" style="background-image: url('{% static 'face/images/hero_1.jpg' %}');">
         <div class="container">
           <div class="row">
             <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
               <span class="icon flaticon-mortarboard"></span>
               <h3>Notre Philosphie</h3>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis recusandae, iure repellat quis delectus ea? Dolore, amet reprehenderit.</p>
+              <p>Transmettre et faire acquérir des connaissances, préparer à la vie professionnelle, 
+                éduquer les futurs adultes à être citoyens et à vivre ensemble, viser l'égalité entre 
+                élèves dans la réussite éducative est la philosophie de la L2I.</p>
             </div>
             <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
               <span class="icon flaticon-school-material"></span>
-              <h3>Academics Principle</h3>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis recusandae, iure repellat quis delectus ea?
-                Dolore, amet reprehenderit.</p>
+              <h3>Principe académique</h3>
+              <p>« l'homme est présenté d'emblée comme un certain être qui, 
+                à la différence des autres animaux, serait doué d'une faculté 
+                qui lui assure un certain rayonnement, la faculté de raisonner ».
+                Nous allons booster le raisonnement dans la L2I.</p>
             </div>
             <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
               <span class="icon flaticon-library"></span>
-              <h3>Key of Success</h3>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis recusandae, iure repellat quis delectus ea?
-                Dolore, amet reprehenderit.</p>
+              <h3>Clé du succès</h3>
+              <p>L'éducation est la clé du succès car elle ouvre des portes 
+                aux personnes de tous les horizons et élargit l'esprit humain
+                avec la connaissance.</p>
             </div>
           </div>
         </div>

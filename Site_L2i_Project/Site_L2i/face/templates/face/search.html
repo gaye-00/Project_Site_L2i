@@ -1,26 +1,45 @@
-{% extends "index.html" %}
-{% block title %} Sen Immobilier {% endblock %}
+{% extends "base.html" %}
+{% block title %} L2I {% endblock %}
 {% block content %} 
 <div class="container" > 
 <h2>Resultat de la recherche pour <strong>{{query}}</strong> </h2>
+<div class="site-section">
+        <div class="container">
+            <div class="row">
+
+{% if listCours %}
 {% for cours in listCours %}
-<div class="col-md-6 wow-outer">
-  <!-- Post Modern-->
-  <cours class="post-modern wow slideInLeft"><a class="post-modern-media" href="{% url 'detail' cours.id %}"><img class="card-img-top" src=" {{ cours.img1.url }} " alt="Bien immobilier" style="height: 300px;" /></a>
-    <h4 class="post-modern-title"><a class="post-modern-title" href="/static/#"><img src="/static/images/localsation.png" alt=""> {{ cours.adresse_bien }}</a></h4>
-    <ul class="post-modern-meta">
-      <li><a class="button-winona" href="/static/#">{{ cours.prix_bien }} francs/mois</a></li>
-      <li>30 Sq. Ft.</li>
-      <li>{{ cours.nb_chambre }} Chambres</li>
-
-    </ul>
-    <p>{{ cours.desc|truncatewords:20 }}</p>
-  </cours>
+<div class="col-lg-4 col-md-6 mb-4">
+  <div class="course-1-item">
+      <figure class="thumnail">
+      <a href="{%url 'course_single' cours.id %}"><img src="{{cours.cover.url}}" alt="Image" class="img-fluid"></a>
+      
+      <div class="category"><h3>{{cours.matiere}} <br>
+      Pr {{cours.auteur}}</h3></div>  
+      </figure>
+      <div class="course-1-content pb-4">
+      <h2>{{cours.titre}}</h2>
+      <div class="rating text-center mb-3">
+          <span class="icon-star2 text-warning"></span>
+          <span class="icon-star2 text-warning"></span>
+          <span class="icon-star2 text-warning"></span>
+          <span class="icon-star2 text-warning"></span>
+          <span class="icon-star2 text-warning"></span>
+      </div>
+      <p class="desc mb-4">{{cours.desc|truncatewords:8}}.</p>
+      <p><a href="{%url 'course_single' cours.id %}" class="btn btn-primary rounded-0 px-4">Commencer tout de suite</a></p>
+      </div>
+  </div>
 </div>
-
 {% endfor %}
+{% else%}
+<h1 class="alert alert-danger ">Pas de cours du nom de {{query}}</h1>
+      
+
+{% endif%}
 
 </div>
-
+ </div>
+</div></div>
 
 {% endblock %}

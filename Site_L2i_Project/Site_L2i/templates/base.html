@@ -52,11 +52,19 @@
           <div class="col-lg-9 d-none d-lg-block">
             <a href="#" class="small mr-3"><span class="icon-question-circle-o mr-2"></span> Vous avez des questions?</a> 
             <a href="#" class="small mr-3"><span class="icon-phone2 mr-2"></span> 77 102 61 70</a> 
-            <a href="#" class="small mr-3"><span class="icon-envelope-o mr-2"></span> oriontheroot@gmail.com</a> 
+            <a href="#" class="small mr-3"><span class="icon-envelope-o mr-2"></span> oriontheroot@gmail.com</a>
+            <form class="form-inline" action="{%url 'search' %}">
+              <div class="md-form my-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Recherchez-vous un cours particulier ?" aria-label="Search" name="cours" size="45">
+              </div>
+            </form>
+             
           </div>
           {% if user.is_authenticated %}
           <div class="col-lg-3 text-right">
             <a href="{% url 'logout' %}" class="small mr-3"><span class="icon-unlock-alt"></span> Se deconnecter</a>
+            <br>
+            <a href="http://127.0.0.1:8000/admin/" class="small mr-1" > <span class="alert alert-success">Administrer</span> </a>
           </div>
           {% else %}
           <div class="col-lg-3 text-right">
@@ -88,7 +96,7 @@
                 <li class="has-children">
                   <a href="{% url 'about' %}" class="nav-link text-left">A propos</a>
                   <ul class="dropdown">
-                    <li><a href="{% url 'universite' %}">Notre Universite</a></li>
+                    <li><a href="{% url 'news_single' %}">Notre Universite</a></li>
                   </ul>
                 </li>
                 <li>
@@ -164,8 +172,8 @@
         <div class="row">
           <div class="col-lg-3">
             <p class="mb-4"><img src="{% static 'face/images/logo.png' %}" alt="Image" class="img-fluid"></p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae nemo minima qui dolor, iusto iure.</p>  
-            <p><a href="#">Learn More</a></p>
+            <p>L'école qui forme les futures ingénieurs dans les domaines informatiques.</p>  
+            <p><a href="{% url 'news_single' %}">En Savoir plus</a></p>
           </div>
           <div class="col-lg-3">
             <h3 class="footer-heading"><span>Notre Campus</span></h3>
@@ -179,13 +187,16 @@
           <div class="col-lg-3">
               <h3 class="footer-heading"><span>Nos Cours par categories</span></h3>
               <ul class="list-unstyled">
-                  <li><a href="#">Math</a></li>
+                  <li><a href="{% url 'course_selon_matiere' "math" %}">Math</a></li>
                   <li><a href="#">Architecture des ordinateurs &amp; Systeme d'exploitaion</a></li>
-                  <li><a href="#">Algorithme</a></li>
+                  <li><a href="{% url 'course_selon_matiere' "Algorithme" %}">Algorithme</a></li>
+                  <li><a href="{% url 'course_selon_matiere' "Base de Données" %}">Base de Données</a></li>
+                  
+                  <li><a href="{% url 'course_selon_matiere' "Analyse de Données" %}">Analyse de Données</a></li>
                   <li><a href="#">Programmation</a></li>
-                  <li><a href="#">Developpement web </a></li>
+                  <li><a href="{% url 'course_selon_matiere' "Back-End" %}">Back End </a></li>
                   <li><a href="#">Anglais</a></li>
-                  <li><a href="#">Techniique d'expression</a></li>
+                  <li><a href="#">Technique d'expression</a></li>
               </ul>
           </div>
          
